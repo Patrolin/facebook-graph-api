@@ -76,8 +76,8 @@ class GraphApi:
         return self.request("{0}/{1}".format(parent_id, path), post_args=data, method="POST")
 
 if __name__ == "__main__":
-    graph_api = GraphApi(
-        "EAAHQ1zfnwtQBABYL3HZBMj85Lx62w6BRRNl5sZCWYka8y6GbTZBjbVOUuotZBZCBhQmm1qqCgLW1XQHDZAJDaMLod81eGqP73O8j0iamMb3O7XZCKEUwyIarUG6TbUoXrLtjLur5rZC80jg4vIl03QJBh3mVUgZA0ZBJGB7P0cbOxuZAR4cZATsHwPmZCCmlJUUQ6TpDkXEKf6Ul7ipCqEw5rZBbpoJI37e8ZBfWhjGrPldu5uy9X4IZC9BgImug"
-    )
+    # hardcoded token from https://developers.facebook.com/tools/explorer
+    ACCESS_TOKEN = "EAAHQ1zfnwtQBABYL3HZBMj85Lx62w6BRRNl5sZCWYka8y6GbTZBjbVOUuotZBZCBhQmm1qqCgLW1XQHDZAJDaMLod81eGqP73O8j0iamMb3O7XZCKEUwyIarUG6TbUoXrLtjLur5rZC80jg4vIl03QJBh3mVUgZA0ZBJGB7P0cbOxuZAR4cZATsHwPmZCCmlJUUQ6TpDkXEKf6Ul7ipCqEw5rZBbpoJI37e8ZBfWhjGrPldu5uy9X4IZC9BgImug"
+    graph_api = GraphApi(ACCESS_TOKEN)
     me = graph_api.get_object("me")
     print(me)

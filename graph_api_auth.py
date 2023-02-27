@@ -48,10 +48,10 @@ class GraphApiAuth:
         return GraphApi(version=self.version).request("oauth/access_token", args)
 
 if __name__ == "__main__":
-    FOOBAR = {"id": "1188538135358142", "secret": "58bd3e9660cf9487763cd4a0d89a4a60"}
-    FAZBEAR = {"id": "511097751192276", "secret": "35a3ae140472af3bd2d1c8a852570b64"}
+    BUSSINESS_APP = {"id": "1188538135358142", "secret": "58bd3e9660cf9487763cd4a0d89a4a60"}
+    CONSUMER_APP = {"id": "511097751192276", "secret": "35a3ae140472af3bd2d1c8a852570b64"}
 
-    app = FAZBEAR
+    app = CONSUMER_APP
     auth = GraphApiAuth(app["id"], app["secret"])
     print(auth.get_auth_url("public_profile,email,user_likes,user_birthday,user_gender"))
     auth_code = input("Enter auth code: ")
