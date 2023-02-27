@@ -1,9 +1,6 @@
 from common import *
 from graph_api import DEFAULT_VERSION, GraphAPIError, GraphApi
 from urllib.parse import urlencode
-import hmac
-import hashlib
-import json
 
 class AuthError(GraphAPIError):
     pass
@@ -48,6 +45,7 @@ class GraphApiAuth:
         return GraphApi(version=self.version).request("oauth/access_token", args)
 
 if __name__ == "__main__":
+    # https://developers.facebook.com/apps
     BUSSINESS_APP = {"id": "1188538135358142", "secret": "58bd3e9660cf9487763cd4a0d89a4a60"}
     CONSUMER_APP = {"id": "511097751192276", "secret": "35a3ae140472af3bd2d1c8a852570b64"}
 

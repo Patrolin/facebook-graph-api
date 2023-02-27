@@ -15,5 +15,8 @@ def getOrNone(obj: Any, path: str) -> Any:
 def getOrDefault(obj: Any, path: str, default: T) -> T:
     return getOrNone(obj, path) or default
 
-def base64Decode(encoded: str) -> bytes:
+def urlSafeBase64Decode(encoded: str) -> bytes:
     return base64.urlsafe_b64decode(encoded + "=" * (4 - (len(encoded) % 4)))
+
+def _base64Decode(encoded: str) -> bytes:
+    return base64.b64decode(encoded + "=" * (4 - (len(encoded) % 4)))
